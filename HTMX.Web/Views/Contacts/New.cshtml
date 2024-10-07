@@ -1,0 +1,30 @@
+@model HTMX.Web.Models.Contacts.ContactFormViewModel
+
+@{
+    ViewData["Title"] = "New Contact";
+}
+
+<h3>New Contact</h3>
+<div class="row justify-content-center">
+    <div class="col-sm-12 col-md-6">
+        <form asp-controller="Contacts"
+              asp-action="PostNew"
+              method="post">
+            <partial name="_ContactForm" model="@Model"/>
+            <button type="submit" class="btn btn-success">
+                <i class="fa fa-floppy-disk"></i>
+                Save
+            </button>
+        </form>
+    </div>
+</div>
+
+<p>
+    <a asp-controller="Contacts"
+       asp-action="Index"
+       class="btn btn-primary"
+       role="button">
+        <i class="fa fa-home"></i>
+        Home
+    </a>
+</p>

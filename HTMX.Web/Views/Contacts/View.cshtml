@@ -1,0 +1,36 @@
+@model HTMX.Web.Models.Contacts.Contact
+@{
+    ViewData["Title"] = "View Contact";
+}
+
+<div class="row justify-content-center">
+    <div class="col-sm-12 col-md-6">
+        <div class="card">
+            <div class="card-body">
+                <dl>
+                    <dt>Email</dt>
+                    <dd>@Model.Email</dd>
+                    <dt>Name</dt>
+                    <dd>@Model.Last, @Model.First</dd>
+                    <dt>Phone</dt>
+                    <dd>@Model.Phone</dd>
+                </dl>
+                <a asp-controller="Contacts"
+                   asp-action="Index"
+                   class="btn btn-primary"
+                   role="button">
+                    <i class="fa fa-home"></i>
+                    Home
+                </a>
+                <a asp-controller="Contacts"
+                   asp-action="GetEdit"
+                   asp-route-id="@Model.Id"
+                   class="btn btn-success"
+                   role="button">
+                    <i class="fa fa-pencil"></i>
+                    Edit
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
